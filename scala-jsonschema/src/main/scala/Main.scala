@@ -11,8 +11,8 @@ object Main {
   def main(args: Array[String]): Unit = {
     implicit val shopIntegrationStartSyncShopJob: Schema[Job.ShopIntegrationStartSyncShopJob] = Json.schema[Job.ShopIntegrationStartSyncShopJob]
     implicit val job: Schema[Job] = Json.schema[Job]
-    //    implicit val jobTrait2: Schema[JobTrait2] = Json.schema[JobTrait2]
-    implicit val jobTrait: Schema[JobTrait] = Json.schema[JobTrait]
+    //implicit val jobTrait2: Schema[JobTrait2] = Json.schema[JobTrait2]
+    //implicit val jobTrait: Schema[JobTrait] = Json.schema[JobTrait]
 
     //  implicit val shopIntegrationStartSyncShopJob2: Schema[JobTrait.ShopIntegrationStartSyncShopJob2] = Json.schema[JobTrait.ShopIntegrationStartSyncShopJob2]
     //println(JsonFormatter.format(AsValue.schema(shopIntegrationStartSyncShopJob, Draft04())))

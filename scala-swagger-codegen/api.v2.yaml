@@ -1,0 +1,295 @@
+swagger: '2.0'
+info:
+  description: >
+    This API wraps the [dKron](https://dkron.io/v1.2/api/#/) scheduling service
+    and provides an easier interface/isolation.
+
+
+    **Note:** The actions which can be scheduled on a specific component are
+    defined in the `patagona-scheduler`. Scheduling actions unknown to the
+    `patagona-scheduler` will result in errors.
+  title: patagona-scheduler
+  version: 1.0.0
+host: todo
+basePath: /
+schemes:
+  - https
+paths:
+  '/v1/contracts/{contractSid}/jobs':
+    parameters:
+      - description: TBD
+        in: path
+        name: contractSid
+        required: true
+        type: string
+        x-example: 291sds
+    get:
+      produces:
+        - application/json
+      parameters:
+        - description: |
+            Filter jobs by component
+          in: query
+          name: component
+          type: string
+          x-example: monitoring-pipeline
+        - description: |
+            Filter jobs by action name
+          in: query
+          name: action
+          type: string
+          x-example: update-producs
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/Job'
+            type: array
+      summary: Get all jobs of contract
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/Job'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Job'
+      description: |
+        **Note** TBD
+      summary: Create a job
+  '/v1/contracts/{contractSid}/jobs/{uuid}':
+    parameters:
+      - description: TBD
+        in: path
+        name: contractSid
+        required: true
+        type: string
+        x-example: 291sds
+      - description: TBD
+        in: path
+        name: uuid
+        required: true
+        type: string
+        x-example: 123e4567-e89b-12d3-a456-426655440000
+    delete:
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Job'
+      summary: Delete job
+    put:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/Job'
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/Job'
+            type: array
+      summary: Update a job
+  '/v1/contracts/{contractSid}/jobs/{uuid}/executions':
+    parameters:
+      - description: TBD
+        in: path
+        name: contractSid
+        required: true
+        type: string
+        x-example: 291sds
+      - description: TBD
+        in: path
+        name: uuid
+        required: true
+        type: string
+        x-example: 123e4567-e89b-12d3-a456-426655440000
+    get:
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/Execution'
+            type: array
+      description: |
+        **Note** The scheduler only keeps a record of the last 100 executions.
+      summary: Get executions of job
+  /v1/jobs:
+    get:
+      produces:
+        - application/json
+      parameters:
+        - description: |
+            Filter jobs by component
+          in: query
+          name: component
+          type: string
+          x-example: monitoring-pipeline
+        - description: |
+            Filter jobs by action name
+          in: query
+          name: action
+          type: string
+          x-example: update-producs
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/Job'
+            type: array
+      summary: Get all jobs
+definitions:
+  BaseJob:
+    properties:
+      action:
+        description: >
+          The name of the action to be executed on the component.
+
+
+          **Note:** This actions are fixed and **MUST** be defined in
+          `patagona-scheduler`.
+        example: update-products
+        type: string
+      component:
+        description: >
+          The name of the component where the job should be scheduled.
+
+
+          **Note:** The components are fixed and **MUST** be defined in
+          `patagona-scheduler`.
+        example: shop-integration
+        type: string
+      jobType:
+        description: |
+          Used to identify the different job types.
+        type: string
+      retries:
+        default: 1
+        description: |
+          How many times the request should be retried when failing.
+        example: 1
+        type: integer
+      schedule:
+        description: >
+          Contains a [CRON specification](https://en.wikipedia.org/wiki/Cron) of
+          a schedule.
+        example: 5 4 * * *
+        type: string
+      uuid:
+        description: >
+          Generated by the `patagona-scheduler`. Used to identify a specific
+          job.
+
+
+          **Note:** Clients **NEVER** generate UUIDs themselves.
+        example: 123e4567-e89b-12d3-a456-426655440000
+        readOnly: true
+        type: string
+    required:
+      - component
+      - action
+      - schedule
+      - jobType
+  Execution:
+    properties:
+      finished_at:
+        description: when the execution finished running
+        format: date-time
+        type: string
+      job_name:
+        description: Internal name of dKron
+        example: job_1
+        type: string
+      node_name:
+        description: name of the node that executed the command
+        example: dkron1
+        type: string
+      output:
+        description: partial output of the command execution
+        example: Hello from Dkron
+        type: string
+      started_at:
+        description: start time of the execution
+        format: date-time
+        type: string
+      success:
+        description: the execution run successfuly
+        type: boolean
+    readOnly: true
+    required:
+      - job_name
+      - started_at
+      - finished_at
+      - success
+      - output
+      - node_name
+  Job: {}
+  MonitoringPipelineJob:
+    allOf:
+      - $ref: '#/definitions/BaseJob'
+      - properties:
+          data:
+            properties:
+              debugValue:
+                type: string
+            type: object
+        type: object
+  ShopIntegrationStartSyncShopJob:
+    allOf:
+      - $ref: '#/definitions/BaseJob'
+      - properties:
+          debugValue:
+            type: string
+x-components:
+  parameters:
+    action:
+      description: |
+        Filter jobs by action name
+      in: query
+      name: action
+      type: string
+      x-example: update-producs
+    component:
+      description: |
+        Filter jobs by component
+      in: query
+      name: component
+      type: string
+      x-example: monitoring-pipeline
+    contractSid:
+      description: TBD
+      in: path
+      name: contractSid
+      required: true
+      type: string
+      x-example: 291sds
+    uuid:
+      description: TBD
+      in: path
+      name: uuid
+      required: true
+      type: string
+      x-example: 123e4567-e89b-12d3-a456-426655440000
+
