@@ -1,0 +1,31 @@
+#%RAML 1.0
+---
+title: My api
+version: v1
+
+types:
+  BaseJob2: !include schemas/BaseJob.json
+  BaseJob:
+    type: object
+    properties:
+      action:
+        type: string
+      component:
+        type: string
+  ShopIntegrationStartShopSyncJob:
+    type: BaseJob
+    properties:
+      type:
+        type: string
+  ShopIntegrationUpdateProductsJob:
+    type: BaseJob
+    properties:
+      type:
+        type: string
+/jobs:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: BaseJob

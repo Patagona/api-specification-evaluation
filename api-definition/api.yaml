@@ -1,0 +1,253 @@
+# https://swagger.io/docs/specification/describing-parameters/
+# https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md
+# https://openapi-generator.tech/docs/generators/
+# https://openapi.tools/#server
+# https://dkron.io/v1.2/api/
+openapi: 3.0.2
+info:
+  title: patagona-scheduler
+  description: >
+    This API wraps the [dKron](https://dkron.io/v1.2/api/#/) scheduling service and provides an easier interface/isolation.
+
+
+    **Note:** The actions which can be scheduled on a specific component are defined in the `patagona-scheduler`.
+    Scheduling actions unknown to the `patagona-scheduler` will result in errors.
+  version: 1.0.0
+servers:
+  - url: 'https://TODO'
+paths:
+  /v1/jobs:
+    get:
+      summary: Get all jobs
+      parameters:
+        - $ref: '#/components/parameters/component'
+        - $ref: '#/components/parameters/action'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Job'
+  /v1/contracts/{contractSid}/jobs:
+    parameters:
+      - $ref: '#/components/parameters/contractSid'
+    get:
+      summary: Get all jobs of contract
+      parameters:
+        - $ref: '#/components/parameters/component'
+        - $ref: '#/components/parameters/action'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Job'
+    post:
+      summary: Create a job
+      description: >
+        **Note** TBD
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+  /v1/contracts/{contractSid}/jobs/{uuid}:
+    parameters:
+      - $ref: '#/components/parameters/contractSid'
+      - $ref: '#/components/parameters/uuid'
+    put:
+      summary: Update a job
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Job'
+    delete:
+      summary: Delete job
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+  /v1/contracts/{contractSid}/jobs/{uuid}/executions:
+    parameters:
+      - $ref: '#/components/parameters/contractSid'
+      - $ref: '#/components/parameters/uuid'
+    get:
+      summary: Get executions of job
+      description: >
+        **Note** The scheduler only keeps a record of the last 100 executions.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Execution'
+components:
+  parameters:
+    component:
+      name: component
+      in: query
+      description: >
+        Filter jobs by component
+      example: monitoring-pipeline
+      schema:
+        type: string
+    action:
+      name: action
+      in: query
+      description: >
+        Filter jobs by action name
+      example: update-producs
+      schema:
+        type: string
+    contractSid:
+      name: contractSid
+      description: TBD
+      in: path
+      required: true
+      example: 291sds
+      schema:
+        type: string
+    uuid:
+      name: uuid
+      description: TBD
+      in: path
+      required: true
+      example: 123e4567-e89b-12d3-a456-426655440000
+      schema:
+        type: string
+  schemas:
+    Job:
+      oneOf:
+        - $ref: '#/components/schemas/ShopIntegrationStartSyncShopJob'
+        - $ref: '#/components/schemas/MonitoringPipelineJob'
+      discriminator:
+        propertyName: jobType
+    ShopIntegrationStartSyncShopJob:
+      allOf:
+        - $ref: '#/components/schemas/BaseJob'
+        - properties:
+            debugValue:
+              type: string
+    MonitoringPipelineJob:
+      allOf:
+        - $ref: '#/components/schemas/BaseJob'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                debugValue:
+                  type: string
+    BaseJob:
+      required:
+        - component
+        - action
+        - schedule
+        - jobType
+      properties:
+        jobType:
+          type: string
+          description: >
+            Used to identify the different job types.
+        component:
+          type: string
+          description: >
+            The name of the component where the job should be scheduled.
+
+
+            **Note:** The components are fixed and **MUST** be defined in `patagona-scheduler`.
+          example:
+            shop-integration
+        action:
+          type: string
+          description: >
+            The name of the action to be executed on the component.
+
+
+            **Note:** This actions are fixed and **MUST** be defined in `patagona-scheduler`.
+          example:
+            update-products
+        schedule:
+          type: string
+          description: >
+            Contains a [CRON specification](https://en.wikipedia.org/wiki/Cron) of a schedule.
+          example:
+            5 4 * * *
+        retries:
+          type: integer
+          description: >
+            How many times the request should be retried when failing.
+          default: 1
+          example: 1
+        uuid:
+          type: string
+          readOnly: true
+          description: >
+            Generated by the `patagona-scheduler`. Used to identify a specific job.
+
+
+            **Note:** Clients **NEVER** generate UUIDs themselves.
+          example: 123e4567-e89b-12d3-a456-426655440000
+    Execution:
+      readOnly: true
+      required:
+        - job_name
+        - started_at
+        - finished_at
+        - success
+        - output
+        - node_name
+      # Taken and adapted from https://dkron.io/v1.2/swagger.yaml
+      properties:
+        job_name:
+          type: string
+          description: "Internal name of dKron"
+          example: "job_1"
+        started_at:
+          type: string
+          format: date-time
+          description: "start time of the execution"
+        finished_at:
+          type: string
+          format: date-time
+          description: "when the execution finished running"
+        success:
+          type: boolean
+          description: "the execution run successfuly"
+        output:
+          type: string
+          description: "partial output of the command execution"
+          example: "Hello from Dkron"
+        node_name:
+          type: string
+          description: "name of the node that executed the command"
+          example: "dkron1"

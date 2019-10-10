@@ -1,0 +1,16 @@
+{
+  "id": "http://atomicbits.io/schema/BaseJob.json",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string"
+    },
+    "component": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "component"
+  ]
+}

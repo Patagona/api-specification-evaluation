@@ -1,0 +1,19 @@
+package com.example
+@target(Scala)
+@codecPackage("com.example.codec")
+@codecTypeField("type")
+@fullCodec("CustomJsonProtocol")
+
+interface Job {
+  name: String!
+}
+
+type ShopIntegrationStartSyncJob implements Job {
+    name: String!
+    data: Int
+}
+
+type ShopIntegrationUpdateProductsJob implements Job {
+    name: String!
+    data: Int
+}

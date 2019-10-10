@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "ShopIntegrationStartSyncShopJob2",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "retries": {
+      "type": "integer"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "debugValue": {
+      "type": "string"
+    },
+    "jobType": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "string"
+    },
+    "component": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "component",
+    "debugValue",
+    "schedule",
+    "jobType"
+  ]
+}
