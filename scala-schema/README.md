@@ -1,1 +1,0 @@
-[scala-jsonschema](https://github.com/andyglow/scala-jsonschema)
