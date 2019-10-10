@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="api-specification-evaluation,api-specification-evaluation.scala-jsonschema,patagona-scheduler-2,patagona-scheduler-3_6213,patagona-scheduler-scala-ts,scala-jsonschema_2220,scala-jsonschema_8897,scala-jsonschema_9725,scala-sbt-contraband,scala-sbt-contraband_1859,scala-sbt-contraband_2283,scala-schema_1774,scala-ts_6905,scraml_5329,untitled2,untitled2" />
+    <profile name="sbt 1" modules="api-specification-evaluation,api-specification-evaluation.scala-jsonschema,patagona-scheduler-2,patagona-scheduler-3_6213,patagona-scheduler-scala-ts,scala-jsonschema_2220,scala-jsonschema_8897,scala-jsonschema_9725,scala-sbt-contraband,scala-sbt-contraband_1859,scala-sbt-contraband_2283,scala-schema_1774,scala-ts_6905,scraml,scraml_5329,untitled2,untitled2" />
   </component>
 </project>
