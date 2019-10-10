@@ -1,0 +1,12 @@
+{
+  "id": "http://atomicbits.io/schema/job.json#",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "ShopIntegrationStartShopSyncJob.json#"
+    },
+    {
+      "$ref": "ShopIntegrationUpdateProductJob.json#"
+    }
+  ]
+}

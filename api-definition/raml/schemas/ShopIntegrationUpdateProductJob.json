@@ -1,0 +1,17 @@
+{
+  "id": "http://atomicbits.io/schema/ShopIntegrationUpdateProductJob.json#",
+  "title": "ShopIntegrationUpdateProductJob",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "BaseJob.json#"
+    },
+    {
+    "type": "object",
+    "properties": {
+        "someAttribute": {
+          "type": "string"
+        }
+      }}
+  ]
+}
