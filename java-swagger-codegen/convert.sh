@@ -4,7 +4,7 @@ set -e
 
 ARTIFACT_URI="io.swagger:swagger-codegen-cli:2.2.2"
 SWAGGER_FILE="swagger-codegen-cli.jar"
-API_V3_FILE=../api-definition/api.yaml
+API_V3_FILE=../api-definition/openapi/api.yaml
 API_V2_FILE=api.v2.yaml
 LANG="scalatra"
 FOLDER="out/$LANG"

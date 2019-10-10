@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="swagger-codegen-cli">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/java-swagger-codegen/swagger-codegen-cli.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

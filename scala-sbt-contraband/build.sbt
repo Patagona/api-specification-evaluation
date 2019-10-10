@@ -1,4 +1,4 @@
-name := "patagona-scheduler-scala-ts"
+name := "scala-sbt-contraband"
 
 version := "0.1"
 

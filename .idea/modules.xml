@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-specification-evaluation.iml" filepath="$PROJECT_DIR$/.idea/modules/api-specification-evaluation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-specification-evaluation-build.iml" filepath="$PROJECT_DIR$/.idea/modules/api-specification-evaluation-build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/scala-jsonschema/.idea/modules/api-specification-evaluation.scala-jsonschema.iml" filepath="$PROJECT_DIR$/scala-jsonschema/.idea/modules/api-specification-evaluation.scala-jsonschema.iml" />
-      <module fileurl="file://$PROJECT_DIR$/scala-jsonschema/.idea/modules/project.scala-jsonschema-build.iml" filepath="$PROJECT_DIR$/scala-jsonschema/.idea/modules/project.scala-jsonschema-build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/scraml/.idea/modules/project.scraml-build.iml" filepath="$PROJECT_DIR$/scraml/.idea/modules/project.scraml-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-definition/api-definition.iml" filepath="$PROJECT_DIR$/api-definition/api-definition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-swagger-codegen/java-swagger-codegen.iml" filepath="$PROJECT_DIR$/java-swagger-codegen/java-swagger-codegen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/node-openapi-generator/node-openapi-generator.iml" filepath="$PROJECT_DIR$/node-openapi-generator/node-openapi-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema.iml" filepath="$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema-build.iml" filepath="$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-sbt-contraband/.idea/modules/scala-sbt-contraband.iml" filepath="$PROJECT_DIR$/scala-sbt-contraband/.idea/modules/scala-sbt-contraband.iml" />
@@ -14,8 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/scala-schema/.idea/modules/scala-schema.iml" filepath="$PROJECT_DIR$/scala-schema/.idea/modules/scala-schema.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-schema/.idea/modules/scala-schema-build.iml" filepath="$PROJECT_DIR$/scala-schema/.idea/modules/scala-schema-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-scraml/.idea/modules/scala-scraml.iml" filepath="$PROJECT_DIR$/scala-scraml/.idea/modules/scala-scraml.iml" />
-      <module fileurl="file://$PROJECT_DIR$/scraml/.idea/modules/scraml.iml" filepath="$PROJECT_DIR$/scraml/.idea/modules/scraml.iml" />
-      <module fileurl="file://$PROJECT_DIR$/scala-scraml/.idea/modules/scraml-build.iml" filepath="$PROJECT_DIR$/scala-scraml/.idea/modules/scraml-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala-scraml/.idea/modules/scala-scraml-build.iml" filepath="$PROJECT_DIR$/scala-scraml/.idea/modules/scala-scraml-build.iml" />
     </modules>
   </component>
 </project>

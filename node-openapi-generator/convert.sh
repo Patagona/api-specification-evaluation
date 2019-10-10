@@ -2,7 +2,7 @@
 
 set -e
 
-FILE="../api-definition/api.yaml"
+FILE="../api-definition/openapi/api.yaml"
 
 rm -rf generated
 
