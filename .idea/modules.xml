@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/scala-ts/.idea/modules/api-specification-evaluation.scala-ts.iml" filepath="$PROJECT_DIR$/scala-ts/.idea/modules/api-specification-evaluation.scala-ts.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-swagger-codegen/java-swagger-codegen.iml" filepath="$PROJECT_DIR$/java-swagger-codegen/java-swagger-codegen.iml" />
       <module fileurl="file://$PROJECT_DIR$/node-openapi-generator/node-openapi-generator.iml" filepath="$PROJECT_DIR$/node-openapi-generator/node-openapi-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala-autoschema/scala-autoschema.iml" filepath="$PROJECT_DIR$/scala-autoschema/scala-autoschema.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala-autoschema/.idea/modules/scala-autoschema-build.iml" filepath="$PROJECT_DIR$/scala-autoschema/.idea/modules/scala-autoschema-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema.iml" filepath="$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema-build.iml" filepath="$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-sbt-contraband/.idea/modules/scala-sbt-contraband.iml" filepath="$PROJECT_DIR$/scala-sbt-contraband/.idea/modules/scala-sbt-contraband.iml" />

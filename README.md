@@ -3,8 +3,6 @@
 
 ## ToDo
 
-[autoschema](https://github.com/coursera/autoschema)
-
 [Argus](https://github.com/aishfenton/Argus)
 
 ## Ideas
