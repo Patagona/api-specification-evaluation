@@ -3,7 +3,7 @@
 sbt compile
 ```
 
-## Converts****
+## Converts
 - RAML :arrow_right: TypeScript
     - no framework
 - RAML :arrow_right: Scala
@@ -17,6 +17,7 @@ sbt compile
 ## Problems
 - Hierarchies are not exported correctly
     - Because? https://github.com/atomicbits/scraml-test-scala/issues/5
+- Uses play! json a lot
 
 ## Generic typing in json-schema and RAML 1.0
 >
@@ -27,3 +28,59 @@ sbt compile
 ## Notes
 - The RAML file needs to be in the `src/main/resources` folder and can NOT be placed outside the project.
      - (soft) symlinks are working
+     
+## Example
+```scala
+package de.patagona.schema
+
+import play.api.libs.json._
+import de.patagona.scheduler.dsl.scalaplay.json.TypedJson._
+
+case class ShopIntegrationStartShopSyncJob(action: String, component: String) extends BaseJob
+
+object ShopIntegrationStartShopSyncJob {
+
+  val jsonFormatter: Format[ShopIntegrationStartShopSyncJob] = Json.format[ShopIntegrationStartShopSyncJob]
+
+  implicit val jsonFormat: Format[ShopIntegrationStartShopSyncJob] =
+    TypeHintFormat(
+      "type",
+      ShopIntegrationStartShopSyncJob.jsonFormatter.withTypeHint("ShopIntegrationStartShopSyncJob"))
+
+}
+```
+
+
+```typescript
+export interface BaseJob  {
+  "action": string,
+  "component": string
+}
+       
+
+export interface BaseJob  {
+  "action": string,
+  "component": string,
+  "type": "BaseJob" | "ShopIntegrationStartShopSyncJob" | "ShopIntegrationUpdateProductsJob",
+}
+       
+
+export interface Execution  {
+  "node_name": string,
+  "success": boolean,
+  "finished_at": string,
+  "job_name": string,
+  "started_at": string,
+  "output": string
+}
+       
+
+export interface ShopIntegrationStartShopSyncJob extends BaseJob {
+  "type": "ShopIntegrationStartShopSyncJob",
+}
+       
+
+export interface ShopIntegrationUpdateProductsJob extends BaseJob {
+  "type": "ShopIntegrationUpdateProductsJob",
+}
+```
