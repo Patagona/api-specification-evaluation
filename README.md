@@ -1,5 +1,10 @@
-[OpenAPI converters](https://openapi.tools/#converters)
+# API Documentation: Evaluation
 
+This repository contains different libraries to convert from/to OpenAPI and RAML.
+
+See READMEs in the different subfolders.
+
+The used API spec resides in [`api-definition`](api-definition/README.md).
 
 ## ToDo
 

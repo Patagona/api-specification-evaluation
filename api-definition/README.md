@@ -1,10 +1,11 @@
 # API Documentation
+
 ## Display
-- https://github.com/mulesoft/api-console
-    - build times...
-- https://github.com/nidi3/raml-doc
-    - hierarchy is not shown
-    - oneOf hierarchies are lost
+```shell
+# https://github.com/Redocly/redoc
+npm install
+http-server -o
+```
 
 ## Specifications
 
@@ -43,19 +44,6 @@ https://json-schema.org/
 - Used to define an API specification
 - Can be written in YAML and JSON
 - Good resource: https://openapi.tools/
-- Converters
-    - openapi-generator
-    - https://openapi-generator.tech/
-    - Based on Java
-    - Converts to
-    - Scala
-    - scala-finch
-    - scala-lagom-server
-    - scala-play-server
-    - scalatra
-    - TypeScript
-    - typescript-angularjs
-    - …
 - PROBLEMS
     - does not handle allOf/oneOf right
     - type hierarchies are not reflected through extends/implements…
