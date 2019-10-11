@@ -12,10 +12,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: com.github.andyglow:scala-jsonschema-api_2.13:0.2.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.github.andyglow:scala-jsonschema-core_2.13:0.2.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.github.andyglow:scala-jsonschema-macros_2.13:0.2.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.github.andyglow:scala-jsonschema-parser_2.13:0.2.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.13.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.andyglow:scala-jsonschema-parser_2.13:0.2.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.andyglow:scala-jsonschema-macros_2.13:0.2.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.andyglow:scala-jsonschema-core_2.13:0.2.1:jar" level="project" />
   </component>
 </module>
