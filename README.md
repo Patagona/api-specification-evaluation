@@ -3,8 +3,6 @@
 
 ## ToDo
 
-[scala-tsi](https://github.com/code-star/scala-tsi/tree/master)
-
 [autoschema](https://github.com/coursera/autoschema)
 
 [Argus](https://github.com/aishfenton/Argus)

@@ -16,6 +16,8 @@
       <module fileurl="file://$PROJECT_DIR$/scala-schema/.idea/modules/scala-schema-build.iml" filepath="$PROJECT_DIR$/scala-schema/.idea/modules/scala-schema-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-ts/scala-ts.iml" filepath="$PROJECT_DIR$/scala-ts/scala-ts.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-ts/.idea/modules/scala-ts-build.iml" filepath="$PROJECT_DIR$/scala-ts/.idea/modules/scala-ts-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala-tsi/scala-tsi.iml" filepath="$PROJECT_DIR$/scala-tsi/scala-tsi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala-tsi/.idea/modules/scala-tsi-build.iml" filepath="$PROJECT_DIR$/scala-tsi/.idea/modules/scala-tsi-build.iml" />
     </modules>
   </component>
 </project>
