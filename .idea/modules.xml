@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api-definition/api-definition.iml" filepath="$PROJECT_DIR$/api-definition/api-definition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-specification-evaluation.iml" filepath="$PROJECT_DIR$/.idea/modules/api-specification-evaluation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-specification-evaluation-build.iml" filepath="$PROJECT_DIR$/.idea/modules/api-specification-evaluation-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-swagger-codegen/java-swagger-codegen.iml" filepath="$PROJECT_DIR$/java-swagger-codegen/java-swagger-codegen.iml" />
       <module fileurl="file://$PROJECT_DIR$/node-openapi-generator/node-openapi-generator.iml" filepath="$PROJECT_DIR$/node-openapi-generator/node-openapi-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema.iml" filepath="$PROJECT_DIR$/scala-jsonschema/.idea/modules/scala-jsonschema.iml" />

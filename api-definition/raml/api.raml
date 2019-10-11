@@ -1,31 +1,24 @@
 #%RAML 1.0
 ---
-title: My api
+title: patagona-scheduler
 version: v1
 
 types:
-  BaseJob2: !include schemas/BaseJob.json
-  BaseJob:
-    type: object
-    properties:
-      action:
-        type: string
-      component:
-        type: string
-  ShopIntegrationStartShopSyncJob:
-    type: BaseJob
-    properties:
-      type:
-        type: string
-  ShopIntegrationUpdateProductsJob:
-    type: BaseJob
-    properties:
-      type:
-        type: string
+  BaseJob: !include schemas/BaseJob.json
+  ShopIntegrationStartShopSyncJob: !include schemas/ShopIntegrationStartShopSyncJob.json
+  ShopIntegrationUpdateProductsJob: !include schemas/ShopIntegrationUpdateProductJob.json
+  Execution: !include schemas/Execution.json
 /jobs:
   get:
     responses:
       200:
         body:
           application/json:
-            type: BaseJob
+            type: [ShopIntegrationStartShopSyncJob, ShopIntegrationUpdateProductsJob]
+/executions:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: Execution

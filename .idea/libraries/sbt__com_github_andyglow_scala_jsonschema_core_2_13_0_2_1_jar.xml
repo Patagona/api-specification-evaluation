@@ -2,12 +2,14 @@
   <library name="sbt: com.github.andyglow:scala-jsonschema-core_2.13:0.2.1:jar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.ivy2/cache/com.github.andyglow/scala-jsonschema-core_2.13/jars/scala-jsonschema-core_2.13-0.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/andyglow/scala-jsonschema-core_2.13/0.2.1/scala-jsonschema-core_2.13-0.2.1.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/andyglow/scala-jsonschema-core_2.13/0.2.1/scala-jsonschema-core_2.13-0.2.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.ivy2/cache/com.github.andyglow/scala-jsonschema-core_2.13/srcs/scala-jsonschema-core_2.13-0.2.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/andyglow/scala-jsonschema-core_2.13/0.2.1/scala-jsonschema-core_2.13-0.2.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

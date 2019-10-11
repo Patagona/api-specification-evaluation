@@ -1,17 +1,10 @@
 {
-  "id": "http://atomicbits.io/schema/ShopIntegrationUpdateProductJob.json#",
+  "id": "http://patagona.de/schema/ShopIntegrationUpdateProductJob.json#",
   "title": "ShopIntegrationUpdateProductJob",
-  "type": "object",
-  "allOf": [
-    {
-      "$ref": "BaseJob.json#"
-    },
-    {
-    "type": "object",
-    "properties": {
-        "someAttribute": {
-          "type": "string"
-        }
-      }}
-  ]
+  "type": "BaseJob",
+  "properties": {
+    "type": {
+      "type": "string"
+    }
+  }
 }

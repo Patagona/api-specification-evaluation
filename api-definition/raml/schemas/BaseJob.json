@@ -1,5 +1,5 @@
 {
-  "id": "http://atomicbits.io/schema/BaseJob.json",
+  "id": "http://patagona.de/schema/BaseJob.json",
   "type": "object",
   "properties": {
     "action": {

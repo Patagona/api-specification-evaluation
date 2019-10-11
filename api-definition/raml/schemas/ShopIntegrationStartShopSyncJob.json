@@ -1,11 +1,10 @@
 {
-   "id":"http://atomicbits.io/schema/ShopIntegrationStartShopSyncJob.json#",
+   "id":"http://patagona.de/schema/ShopIntegrationStartShopSyncJob.json#",
    "title":"ShopIntegrationStartShopSyncJob",
-   "type":"object",
-   "$ref":"http://atomicbits.io/schema/BaseJob.json",
-   "genericTypes":[
-      {
+   "type":"BaseJob",
+     "properties": {
+       "type": {
          "type": "string"
-      }
-   ]
+       }
+     }
 }

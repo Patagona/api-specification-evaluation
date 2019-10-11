@@ -1,0 +1,37 @@
+{
+  "id": "http://patagona.de/schema/Execution.json",
+  "type": "object",
+  "properties": {
+    "job_name": {
+      "type": "string",
+      "description": "Internal name of dKron",
+      "example": "job_1"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "start time of the execution"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "when the execution finished running"
+    },
+    "success": {
+      "type": "boolean",
+      "description": "the execution run successfuly"
+    },
+    "output": {
+      "type": "string",
+      "description": "partial output of the command execution",
+      "example": "Hello from Dkron"
+    },
+    "node_name": {
+      "type": "string",
+      "description": "name of the node that executed the command",
+      "example": "dkron1"
+    }
+  },
+  "required": [
+  ]
+}
