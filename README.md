@@ -10,6 +10,8 @@ The used API spec resides in [`api-definition`](api-definition/README.md).
 
 [Argus](https://github.com/aishfenton/Argus)
 
+[openapi3](https://github.com/Dorthu/openapi3)
+
 ## Ideas
 - Convert from
     - OpenAPI :arrow_right: TypeScript/Scala

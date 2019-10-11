@@ -16,9 +16,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: com.eed3si9n:shaded-scalajson_2.13:1.0.0-M4:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.eed3si9n:sjson-new-core_2.13:0.8.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.eed3si9n:sjson-new-scalajson_2.13:0.8.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:jawn-parser_2.13:0.14.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.eed3si9n:sjson-new-scalajson_2.13:0.8.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.eed3si9n:sjson-new-core_2.13:0.8.3:jar" level="project" />
   </component>
 </module>
